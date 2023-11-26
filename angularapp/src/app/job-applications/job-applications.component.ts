@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from '../services/job.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JobApplication } from 'src/models/job-application.model';
 
 @Component({
@@ -10,23 +10,23 @@ import { JobApplication } from 'src/models/job-application.model';
 })
 export class JobApplicationsComponent implements OnInit {
 
-  jobdata : JobApplication;
+  jobApplicationForm : FormGroup
+  jobPositions : JobApplication;
 
-  constructor(private js : JobService , private fb : FormBuilder) {}
+  constructor(private js : JobService , private fb : FormBuilder) {
   
-  jobApplicationForm = this.fb.group
+  this.jobApplicationForm = this.fb.group
   ({
     applicantName :['',Validators.required],
     jobPositionId :['',Validators.required],
   })
+}
   
   ngOnInit(): void {}
-  jobPosition
   
   applyForJob() : void
   {
-    this.js.
-    this.js.applyForJob(this.jobdata).subscribe((data)=>{this.jobdata = data})
+    this.js.applyForJob(this.jobPositions).subscribe((data)=>{this.jobPositions = data})
   }
 
 }
