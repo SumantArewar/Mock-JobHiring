@@ -10,19 +10,20 @@ import { JobApplication } from 'src/models/job-application.model';
 })
 export class JobApplicationsComponent implements OnInit {
 
-jobdata : JobApplication;
+  jobdata : JobApplication;
 
-  constructor(private js : JobService , private fb : FormBuilder) 
-  {
-    // this.jobdata = data
-  }
+  constructor(private js : JobService , private fb : FormBuilder) {}
   
-  jobApplicationForm = this.fb.group({
+  jobApplicationForm = this.fb.group
+  ({
     applicantName :['',Validators.required],
     jobPositionId :['',Validators.required],
   })
   
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  
+  applyForJob() : void
+  {
     this.js.applyForJob(this.jobdata).subscribe((data)=>{this.jobdata = data})
   }
 
