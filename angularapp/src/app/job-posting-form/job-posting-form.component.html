@@ -1,29 +1,29 @@
 <h2>Create Job Posting</h2>
-<form [formGroup] = "jobPostingForm" (ngSubmit) = "submitJobPosting()">
+ <form [formGroup] = "jobPostingForm" (ngSubmit) = "submitJobPosting(jobPostingForm)">
 
-        <!-- <div class="form-group"> -->
+        <div class="form-group"> 
             <lable for = "title">Job Title</lable>
             <input id ="title"  formControlname = "title" >
-        <!-- </div> -->
-        <!-- <div class="form-group"> -->
+        </div>
+        <div class="form-group">
             <lable for = "department">Job Title</lable>
             <input id = "department"  formControlname = "department" >
-        <!-- </div> -->
-        <!-- <div class="form-group"> -->
+        </div>
+        <div class="form-group">
             <lable for = "location">Location</lable>
             <input id = "location"  formControlname = "location" >
-        <!-- </div> -->
-        <!-- <div class="form-group"> -->
+        </div>
+        <div class="form-group">
             <lable for = "responsibilities">Responsibilities</lable>
-            <textarea id = "responsibilities" formControlname = "responsibilities" >
-        <!-- </div> -->
-        <!-- <div class="form-group"> -->
+            <textarea id = "responsibilities" formControlname = "responsibilities" ></textarea>
+        </div>
+        <div class="form-group">
             <lable for = "qualifications">qualifications</lable>
-            <textarea id = "qualifications" formControlname = "qualifications" >
-        <!-- </div> -->
-        <!-- <div class="form-group"> -->
+            <textarea id = "qualifications" formControlname = "qualifications"></textarea>
+        </div>
+        <div class="form-group">
             <lable for = "applicationDeadline">Application Deadline</lable>
             <input id = "applicationDeadline"  formControlname = "applicationDeadline" >
-        <!-- </div> -->
+        </div>
         <button type = "submit" >Submit</button>        
-</form>
+</form> 

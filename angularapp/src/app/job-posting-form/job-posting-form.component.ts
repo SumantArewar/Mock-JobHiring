@@ -23,7 +23,7 @@ export class JobPostingFormComponent implements OnInit {
     applicationDeadline : ['' ,Validators.required],
   })
   
-  submitJobPosting() : void
+  submitJobPosting() 
   {
     // this.jobform = this.form.value
     // console.log(this.jobform)

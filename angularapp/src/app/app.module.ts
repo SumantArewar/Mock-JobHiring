@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobPostingFormComponent } from './job-posting-form/job-posting-form.component';
+import { JobApplicationsComponent } from './job-applications/job-applications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JobPostingFormComponent
+    JobPostingFormComponent,
+    JobApplicationsComponent
   ],
   imports: [
     BrowserModule,
