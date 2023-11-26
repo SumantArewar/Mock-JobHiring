@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { JobPostingFormComponent } from './job-posting-form/job-posting-form.component';
 import { JobApplicationsComponent } from './job-applications/job-applications.component';
 import { ViewJobApplicationsComponent } from './view-job-applications/view-job-applications.component';
+import { ViewJobPostingsComponent } from './view-job-postings/view-job-postings.component';
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobPostingFormComponent,
     JobApplicationsComponent,
-    ViewJobApplicationsComponent
+    ViewJobApplicationsComponent,
+    ViewJobPostingsComponent,
+    NavigationMenuComponent
   ],
   imports: [
     BrowserModule,
