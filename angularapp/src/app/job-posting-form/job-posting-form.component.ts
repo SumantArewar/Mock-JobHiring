@@ -10,30 +10,55 @@ import { JobPosition } from 'src/models/job-position.model';
 })
 export class JobPostingFormComponent implements OnInit {
 
-  // jobform = JobPosition
+  jobform = JobPosition
 
-  constructor(private fb : FormBuilder , private js : JobService) { }
+  // constructor(private fb : FormBuilder , private js : JobService) { }
 
-  jobApplicationForm = this.fb.group({
-    title : ['' ,Validators.required],
-    department : ['' ,Validators.required],
-    location : ['' ,Validators.required],
-    responsibilities : ['' ,Validators.required],
-    qualifications : ['' ,Validators.required],
-    applicationDeadline : ['' ,Validators.required]
-  })
+  // jobApplicationForm = this.fb.group({
+  //   title : ['' ,Validators.required],
+  //   department : ['' ,Validators.required],
+  //   location : ['' ,Validators.required],
+  //   responsibilities : ['' ,Validators.required],
+  //   qualifications : ['' ,Validators.required],
+  //   applicationDeadline : ['' ,Validators.required]
+  // })
   
-  submitJobPosting() 
-  {
-    // this.jobform = this.jobApplicationForm.value
-    // console.log(this.jobform)
-    // this.js.createJobPosition(this.jobform).subscribe(()=>{
-    //   alert("Record Added")
-    // })
-    this.js.createJobPosition(this.jobApplicationForm.value).subscribe(()=>{
-      console.log("Created Job")})
-  }
+  // ngOnInit(): void {
+  // }
+  // submitJobPosting() 
+  // {
+  //   // this.jobform = this.jobApplicationForm.value
+  //   // console.log(this.jobform)
+  //   // this.js.createJobPosition(this.jobform).subscribe(()=>{
+  //   //   alert("Record Added")
+  //   // })
+  //   this.js.createJobPosition(this.jobApplicationForm.value).subscribe(()=>{
+  //     console.log("Created Job")})
+  // }
+  constructor(private fb:FormBuilder,private ss:JobService) { }
+  
+  jobApplicationForm= this.fb.group({
+    title :['',Validators.required],
+    department:['',Validators.required],
+    location:['',Validators.required],
+    responsibilities:['',Validators.required],
+    qualifications:['',Validators.required],
+    applicationDeadline:['',Validators.required]
+  })
 
   ngOnInit(): void {
   }
+
+  submitJobPosting()
+  {
+    if(jobform.valid)
+    {
+
+      this.ss.createJobPosition(this.jobApplicationForm.value).subscribe(()=>{
+        console.log("Created Job")
+      })
+    }``
+  }
+
+
 }
