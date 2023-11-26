@@ -37,10 +37,9 @@ export class JobService {
   {
     return this.http.post<JobPosition>(this.apiUrl + '/position/add' , newJobPosition , this.httpoptions )
   }
-  updateApplicationStatus(applicationId : number , applicantName : string , newStatus : string ) : Observable<JobApplication>
+  updateApplicationStatus(applicationId : number , applicantName : string , status : string ) : Observable<JobApplication>
   {
-    htt
-    return this.http.put<JobApplication>(this.apiUrl + '/application/update/' + applicationId , applicantName  , this.httpoptions )
+    return this.http.put<JobApplication>(this.apiUrl + '/application/update/' + applicationId , applicantName , this.httpoptions )
     // status : ['Pending'];
     // status : newStatus
   }
