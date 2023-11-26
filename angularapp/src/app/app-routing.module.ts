@@ -4,8 +4,8 @@ import { ViewJobPostingsComponent } from './view-job-postings/view-job-postings.
 import { ViewJobApplicationsComponent } from './view-job-applications/view-job-applications.component';
 
 const routes: Routes = [
-  {path : 'view-post' , component : ViewJobPostingsComponent},
-  {path : 'view-appli' , component : ViewJobApplicationsComponent},
+  // {path : 'view-post' , component : ViewJobPostingsComponent},
+  // {path : 'view-appli' , component : ViewJobApplicationsComponent},
 ];
 
 @NgModule({
