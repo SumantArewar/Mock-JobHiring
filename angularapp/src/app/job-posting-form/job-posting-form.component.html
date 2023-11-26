@@ -2,28 +2,27 @@
  <form [formGroup] = "jobPostingForm" (ngSubmit) = "submitJobPosting()">
 
         <div class="form-group"> 
-            <lable for = "title">Job Title</lable>
-            
+            <label for = "title">Job Title</label>
             <input id ="title"  formControlname = "title" >
         </div>
         <div class="form-group">
-            <lable for = "department">Job Title</lable>
+            <label for = "department">Job Title</label>
             <input id = "department"  formControlname = "department" >
         </div>
         <div class="form-group">
-            <lable for = "location">Location</lable>
+            <label for = "location">Location</label>
             <input id = "location"  formControlname = "location" >
         </div>
         <div class="form-group">
-            <lable for = "responsibilities">Responsibilities</lable>
+            <label for = "responsibilities">Responsibilities</label>
             <textarea id = "responsibilities" formControlname = "responsibilities" ></textarea>
         </div>
         <div class="form-group">
-            <lable for = "qualifications">qualifications</lable>
+            <label for = "qualifications">qualifications</label>
             <textarea id = "qualifications" formControlname = "qualifications"></textarea>
         </div>
         <div class="form-group">
-            <lable for = "applicationDeadline">Application Deadline</lable>
+            <label for = "applicationDeadline">Application Deadline</label>
             <input id = "applicationDeadline"  formControlname = "applicationDeadline" >
         </div>
         <button type = "submit" >Submit</button>        
