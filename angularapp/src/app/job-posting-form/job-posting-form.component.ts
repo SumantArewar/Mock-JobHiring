@@ -10,7 +10,7 @@ import { JobPosition } from 'src/models/job-position.model';
 })
 export class JobPostingFormComponent implements OnInit {
 
-  jobform = JobPosition
+  // jobform = JobPosition
 
   // constructor(private fb : FormBuilder , private js : JobService) { }
 
@@ -35,9 +35,9 @@ export class JobPostingFormComponent implements OnInit {
   //   this.js.createJobPosition(this.jobApplicationForm.value).subscribe(()=>{
   //     console.log("Created Job")})
   // }
-  constructor(private fb:FormBuilder,private ss:JobService) { }
+   constructor(private fb:FormBuilder,private ss:JobService) { }
   
-  jobApplicationForm= this.fb.group({
+  jobPostingForm= this.fb.group({
     title :['',Validators.required],
     department:['',Validators.required],
     location:['',Validators.required],
@@ -49,15 +49,14 @@ export class JobPostingFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitJobPosting()
-  {
-    if(jobform.valid)
-    {
+  submitJobPosting(){
 
-      this.ss.createJobPosition(this.jobApplicationForm.value).subscribe(()=>{
-        console.log("Created Job")
-      })
-    }``
+    
+
+     this.ss.createJobPosition(this.jobPostingForm.value).subscribe(()=>{
+      console.log("Created Job")
+     })
+
   }
 
 
