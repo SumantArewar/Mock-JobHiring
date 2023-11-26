@@ -2,6 +2,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { JobApplication } from 'src/models/job-application.model';
+import { JobPosition } from 'src/models/job-position.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,16 +17,24 @@ export class JobService {
   {
     return this.http.get<any[]>(this.apiUrl + '/applications')
   }
-  getJobPostings() : Observable<any[]>
+  getTotalApplicantsByJobPositionId(jobPositionId : number) : Observable<any>
   {
-    return this.http.get<any[]>(this.apiUrl + '/positions')
+    return this.http.get<any>(this.apiUrl + '/applications/by-job-position?jobPositionId=' + jobPositionId)
   }
   markJobAsClosed() :void{}
   
   httpoptions = { headers : new HttpHeaders({'content-type' : 'appliaction/json'})}
   
-  applyForJob() : Observable<JobApplication>
+  applyForJob(newJobApplication : JobApplication) : Observable<JobApplication>
   {
-    return this.http.get<JobApplication>(this.apiUrl + '/positions')
+    return this.http.post<JobApplication>(this.apiUrl + '/application/add' , newJobApplication , this.httpoptions )
   }
+  createJobPosition(newJobPosition : JobPosition) : Observable<any>
+  {
+    return this.http.post<any>(this.apiUrl + '/position/add' , newJobPosition , this.httpoptions )
+  }
+  // updateApplicationStatus(applicationId : number , applicantName : string , newStatus : string ) : Observable<JobApplication>
+  // {
+  //   return this.http.put<JobApplication>(this.apiUrl + '/application/update/' + applicationId , applicantName  , this.httpoptions )
+  // }
 }
