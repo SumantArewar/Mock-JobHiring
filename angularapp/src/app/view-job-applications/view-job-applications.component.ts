@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JobService } from '../services/job.service';
+import { JobApplication } from 'src/models/job-application.model';
 
 @Component({
   selector: 'app-view-job-applications',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewJobApplicationsComponent implements OnInit {
 
-  constructor() { }
+  jobApplications : JobApplication[] =[]
+
+  constructor(private js : JobService) { }
 
   ngOnInit(): void {
+    this.js.getJobApplications().subscribe(data => {this.jobApplications.push(...data)})
+    console.log("byeee"+this.jobApplications)
+    console.log(this.jobApplications)
   }
 
 }
