@@ -21,9 +21,11 @@ export class JobApplicationsComponent implements OnInit {
   })
   
   ngOnInit(): void {}
+  jobPosition
   
   applyForJob() : void
   {
+    this.js.
     this.js.applyForJob(this.jobdata).subscribe((data)=>{this.jobdata = data})
   }
 

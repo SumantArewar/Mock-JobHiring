@@ -14,7 +14,7 @@ export class JobPostingFormComponent implements OnInit {
 
   constructor(private fb : FormBuilder , private js : JobService) { }
 
-  jobPostingForm = this.fb.group({
+  form = this.fb.group({
     title : ['' ,Validators.required],
     department : ['' ,Validators.required],
     location : ['' ,Validators.required],
