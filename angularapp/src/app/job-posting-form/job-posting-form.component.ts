@@ -22,10 +22,17 @@ export class JobPostingFormComponent implements OnInit {
     qualifications : ['' ,Validators.required],
     applicationDeadline : ['' ,Validators.required],
   })
-  submitJobPosting(){}
+  
+  submitJobPosting() : void
+  {
+    this.jobform = this.form.value
+    console.log(this.jobform)
+    this.js.createJobPosition(this.jobform).subscribe(()=>{
+      alert("Record Added")
+    })
+  }
 
   ngOnInit(): void {
-    this.js.getJobPostings(this.jobform).subscribe(()=>{this.jobform})
   }
 
 }
