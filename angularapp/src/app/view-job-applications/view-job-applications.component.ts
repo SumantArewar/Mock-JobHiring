@@ -13,10 +13,14 @@ export class ViewJobApplicationsComponent implements OnInit {
 
   constructor(private js : JobService) { }
 
-  ngOnInit(): void {
+  loadJobApplications(){
+
     this.js.getJobApplications().subscribe(data => {this.jobApplications.push(...data)})
     console.log("byeee"+this.jobApplications)
     console.log(this.jobApplications)
+  }
+
+  ngOnInit(): void {
   }
 
 }

@@ -1,5 +1,5 @@
 <h2>Create Job Posting</h2>
- <form [formGroup] = "jobApplicationForm" (ngSubmit) = "submitJobPosting()">
+<form [formGroup] = "jobApplicationForm" (ngSubmit) = "submitJobPosting()">
         <div class="form-group"> 
             <label for = "title">Job Title</label>
             <input id ="title"  formControlname = "title" >
@@ -24,5 +24,5 @@
             <label for = "applicationDeadline">Application Deadline</label>
             <input id = "applicationDeadline"  formControlname = "applicationDeadline" >
         </div>
-        <button type = "submit" >Submit</button>        
+        <button type = "submit" [disabled] ="!jobApplicationForm.valid">Submit</button>        
 </form> 
