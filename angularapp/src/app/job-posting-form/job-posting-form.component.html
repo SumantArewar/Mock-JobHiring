@@ -1,7 +1,5 @@
 <h2>Create Job Posting</h2>
- <form [formGroup] = "form" (ngSubmit) = "submitJobPosting()">
- <!-- <form  (ngSubmit) = "submitJobPosting()"> -->
-
+ <form [formGroup] = "jobApplicationForm" (ngSubmit) = "submitJobPosting()">
         <div class="form-group"> 
             <label for = "title">Job Title</label>
             <input id ="title"  formControlname = "title" >
