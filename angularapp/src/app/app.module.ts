@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobPostingFormComponent } from './job-posting-form/job-posting-form.component';
 import { JobApplicationsComponent } from './job-applications/job-applications.component';
+import { ViewJobApplicationsComponent } from './view-job-applications/view-job-applications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobPostingFormComponent,
-    JobApplicationsComponent
+    JobApplicationsComponent,
+    ViewJobApplicationsComponent
   ],
   imports: [
     BrowserModule,
